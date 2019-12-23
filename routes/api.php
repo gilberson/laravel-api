@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+// use Illuminate\Routing\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('task', 'TaskController@index');
+Route::post('store', 'TaskController@store');
+Route::post('delete/{id}', 'TaskController@destroy')->where('id', '[0-9]+');
+Route::get('task/{id}', 'TaskController@show')->where('id', '[0-9]+');

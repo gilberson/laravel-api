@@ -1,0 +1,44 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Prof. Florida Emard I",
+            "email": "halvorson.jonathon@example.org",
+            "email_verified_at": "2019-12-19 22:31:52",
+            "created_at": "2019-12-19 22:31:53",
+            "updated_at": "2019-12-19 22:31:53"
+        },
+        {
+            "id": 2,
+            "name": "Aliyah Koss",
+            "email": "jast.rusty@example.org",
+            "email_verified_at": "2019-12-19 22:31:52",
+            "created_at": "2019-12-19 22:31:53",
+            "updated_at": "2019-12-19 22:31:53"
+        },
+        {
+            "id": 3,
+            "name": "Destin Becker",
+            "email": "kirlin.alba@example.net",
+            "email_verified_at": "2019-12-19 22:31:52",
+            "created_at": "2019-12-19 22:31:53",
+            "updated_at": "2019-12-19 22:31:53"
+        },
+        {
+            "id": 4,
+            "name": "Ollie Heaney",
+            "email": "ymohr@example.org",
+            "email_verified_at": "2019-12-19 22:31:53",
+            "created_at": "2019-12-19 22:31:53",
+            "updated_at": "2019-12-19 22:31:53"
+        },
+        {
+            "id": 5,
+            "name": "Miss Kelly Witting",
+            "email": "laurence.witting@example.net",
+            "email_verified_at": "2019-12-19 22:31:53",
+            "created_at": "2019-12-19 22:31:54",
+            "updated_at": "2019-12-19 22:31:54"
+        }
+    ]
+}

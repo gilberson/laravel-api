@@ -17,6 +17,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\TaskRepositoryInterface',
             'App\Repositories\TaskRepository'
         );
+
+        $this->app->bind(
+            'App\Repositories\UserRepositoryInterface',
+            'App\Repositories\UserRepository'
+        );
     }
 
     /**

@@ -49,7 +49,6 @@ class TaskRepository implements TaskRepositoryInterface
      */
     public function delete($id)
     {
-        //Task::destroy($id);
         $task = Task::find($id);
         if($task){
             $destroy = Task::destroy($id);

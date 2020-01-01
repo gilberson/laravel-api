@@ -54,6 +54,14 @@ class TaskController extends Controller
      */
     public function show($id)
     {
+        $task = $this->task->get($id);
+
+        if(!$task){
+            return response()->json([
+                'message' => 'error'
+            ], 404);
+        }
+
         return $this->task->get($id);
     }
 
@@ -77,7 +85,17 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = $this->task->update($id, $request->only('title', 'description'));
+
+        if(!$task){
+            return response()->json([
+                'message' => 'error'
+            ], 404);
+        }
+
+        return response()->json([
+            'message' => 'success'
+        ], 200);
     }
 
     /**
@@ -90,8 +108,14 @@ class TaskController extends Controller
     {
         $destroy = $this->task->delete($id);
 
+        if($destroy !==1){
+            return response()->json([
+                'message' => 'error'
+            ],404);
+        }
+
         return response()->json([
-            'message' => $destroy == 1 ? 'sucess' : 'error'
-            ]);
+            'message' => 'sucess'
+        ],200);
     }
 }

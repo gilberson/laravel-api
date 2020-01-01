@@ -25,3 +25,4 @@ Route::get('tasks', 'TaskController@index');
 Route::post('store', 'TaskController@store');
 Route::post('delete/{id}', 'TaskController@destroy')->where('id', '[0-9]+');
 Route::get('tasks/{id}', 'TaskController@show')->where('id', '[0-9]+');
+Route::post('update/{id}', 'TaskController@update')->where('id', '[0-9]+');

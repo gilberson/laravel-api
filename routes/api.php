@@ -21,8 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('users/{id}', 'UserController@show')->where('id', '[0-9]+');
 Route::get('users', 'UserController@index');
 
+Route::post('tasks', 'TaskController@store');
 Route::get('tasks', 'TaskController@index');
-Route::post('store', 'TaskController@store');
-Route::post('delete/{id}', 'TaskController@destroy')->where('id', '[0-9]+');
 Route::get('tasks/{id}', 'TaskController@show')->where('id', '[0-9]+');
-Route::post('update/{id}', 'TaskController@update')->where('id', '[0-9]+');
+Route::put('tasks/{id}', 'TaskController@update')->where('id', '[0-9]+');
+Route::delete('tasks/{id}', 'TaskController@destroy')->where('id', '[0-9]+');

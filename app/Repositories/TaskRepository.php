@@ -65,6 +65,14 @@ class TaskRepository implements TaskRepositoryInterface
      */
     public function update($id, array $data)
     {
-        Task::find($id)->update($data);
+        //Task::find($id)->update($data);
+        $task = Task::find($id);
+        $update = $task->fill($data)->save();
+
+        if($update){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

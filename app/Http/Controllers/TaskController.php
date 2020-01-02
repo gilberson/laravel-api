@@ -39,11 +39,17 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $task = $this->task->store($request);
-        $message = !$task ? 'error' : 'sucess';
+
+        if(!$task){
+            return response()->json([
+                'message' => 'error'
+            ], 400);
+        }
+
         return response()->json([
             'task' => $task,
-            'message' => $message
-            ], 200);
+            'message' => 'success'
+        ], 200);
     }
 
     /**
@@ -85,17 +91,19 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $task = $this->task->update($id, $request->only('title', 'description'));
+        $task = $this->task->update($id, $request->all());
 
-        if(!$task){
+        if($task){
             return response()->json([
-                'message' => 'error'
+                'message' => 'success',
+                'task' => $task
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'error',
+                'task' => $task
             ], 404);
         }
-
-        return response()->json([
-            'message' => 'success'
-        ], 200);
     }
 
     /**
@@ -108,7 +116,7 @@ class TaskController extends Controller
     {
         $destroy = $this->task->delete($id);
 
-        if($destroy !==1){
+        if(!$destroy){
             return response()->json([
                 'message' => 'error'
             ],404);
